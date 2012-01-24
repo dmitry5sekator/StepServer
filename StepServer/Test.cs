@@ -8,5 +8,6 @@ namespace StepServer
     class Test
     {
         //Это класс
+        овыигвмим гм гм гкм гкмкм
     }
 }
