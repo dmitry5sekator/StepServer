@@ -9,9 +9,6 @@ namespace StepServer
     {
         static void Main(string[] args)
         {
-            //HIIIIIII 
-            //blyat
-            ьреварвр авав   ва
         }
     }
 }
