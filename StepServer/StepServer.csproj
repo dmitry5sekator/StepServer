@@ -45,7 +45,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\AssessmentTable.cs" />
+    <Compile Include="Table\ConnectionTable.cs" />
+    <Compile Include="Table\GroupTable.cs" />
+    <Compile Include="Table\ItemsTable.cs" />
+    <Compile Include="Table\LoginPassswordTable.cs" />
+    <Compile Include="Table\SudentTable.cs" />
     <Compile Include="Table\TableGateWay.cs" />
+    <Compile Include="Table\TeacherTable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
