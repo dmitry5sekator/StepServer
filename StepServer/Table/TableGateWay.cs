@@ -11,6 +11,15 @@ namespace StepServer.Table
 {
     class TableGateWay
     {
+        private SqlConnection conn;
+        private string tableName;
+
+        public TableGateWay(SqlConnection conn, string tableName)
+        {
+            // TODO: Complete member initialization
+            this.conn = conn;
+            this.tableName = tableName;
+        }
         public int Insert(Dictionary<String, String> dict)
         {
             String getField = "(";
@@ -28,6 +37,20 @@ namespace StepServer.Table
 
             String sql = "INSERT INTO " + tableName + " " + getField + getValue + " ";
             SqlCommand com = new SqlCommand(sql, connection);
+            return com.ExecuteNonQuery();
+        }
+        public int Update(Dictionary<String, String> dict, String field, Object value)
+        {
+            String SQL = "UPDATE " + tableName + " SET";
+            foreach (KeyValuePair<String, String> pair in dict)
+            {
+                SQL += "`" + pair.Key + "`=";
+                SQL += "'" + pair.Value + "',";
+            }
+            SQL = SQL.Substring(0, SQL.Length - 1);
+            SQL = "WHERE `" + field + "` = '" + value + "'";
+
+            SqlCommand com = new SqlCommand(SQL, connection);
             return com.ExecuteNonQuery();
         }
     }
